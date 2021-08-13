@@ -24,4 +24,6 @@ urlpatterns = [
     path('', views.Home, name='home'),
 
     path('primera/', views.Pri, name = 'primera'),
+
+    path('CARPI/', views.Carpincho, name='carpincho'),
 ]
