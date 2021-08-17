@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             name='ElegirRespuesta',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('correcta', models.BooleanField(default=False, verbose_name='¿Es esta la pregunta correcta?')),
+                ('correcta', models.BooleanField(default=False, verbose_name='¿Es esta la respuesta correcta?')),
                 ('texto', models.TextField(verbose_name='Texto de la respuesta')),
                 ('pregunta', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='preguntas', to='preguntas.Preguntas')),
             ],
