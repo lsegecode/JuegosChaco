@@ -8,7 +8,3 @@ def Pri(request):
 
     return render(request, 'primera.html')
 
-
-def Carpincho(request): 
-
-	return render(request, 'carpincho.html')
