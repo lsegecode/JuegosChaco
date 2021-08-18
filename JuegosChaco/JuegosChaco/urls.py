@@ -24,6 +24,7 @@ urlpatterns = [
     path('primera/', views.Pri, name = 'primera'),
 
     #REDIRECCION A LAS APP
+    path('usuario/', include('apps.usuario.urls')),
     path('preguntas/',include('apps.preguntas.urls')),
     path('resultados/',include('apps.resultados.urls')),
 
