@@ -1,3 +1,33 @@
-h1{
-    color: red;
+
+
+body {
+	background-color: lightgreen; 
+	opacity: 1;
+	
 }
+
+h1 {
+	color: #FCFC14;
+	font-family: Lobster;
+	font-size: 50px;
+}
+
+h2 {
+	color: #000000; 
+	font-family: Helvetica; 
+	font-size: 20px;
+	border: 5px solid red;
+  	border-radius: 10px;
+  	background-color: #FFFFFF;
+	
+}
+
+li {
+	display: inline;
+	padding: 15px;
+
+}
+li a:hover {
+  background-color: lightblue;
+}
+
