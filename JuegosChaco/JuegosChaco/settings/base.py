@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'usuario.Usuario'
 
 LOGIN_REDIRECT_URL = reverse_lazy('home')
-LOGOUT_REDIRECT_URL = reverse_lazy('login')
+LOGOUT_REDIRECT_URL = reverse_lazy('home')
 LOGIN_URL = reverse_lazy('login')
 
 
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.usuario',
     'apps.preguntas',
-
+    'apps.resultados',
 ]
 
 MIDDLEWARE = [

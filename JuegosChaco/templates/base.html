@@ -4,12 +4,20 @@
 <html>
 <head>
 	<title>Juegos Chaco</title>
-
-	<link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 </head>
 <body>
-
 	<h1>G2 - CARPINCHO</h1>
+	<a href="{% url 'home' %}"><img src="{% static 'img/home.jpg' %}" width="100px" height="100px"></a>
+	
+
+
+	{% if user.is_authenticated %}
+		<span>{{user.username}}</span>
+		<a href="{% url 'logout' %}">LOGOUT</a>
+	{% else %}
+		<a href="{% url 'login' %}">LOGIN</a>
+	{% endif %}
 
 {% block contenido %}
 
