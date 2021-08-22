@@ -4,5 +4,5 @@ from . import views
 app_name = 'preguntas'
 
 urlpatterns = [
-    path('', views.IniciarPreguntas, name = 'iniciar.html'),
+    path('', views.IniciarPreguntas, name = 'jugar'),
 ]

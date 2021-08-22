@@ -4,5 +4,5 @@ from . import views
 app_name = 'usuario'
 
 urlpatterns = [
-    path('', views.Perfil, name = 'perfil.html'),
+    path('', views.Perfil, name = 'perfil'),
 ]

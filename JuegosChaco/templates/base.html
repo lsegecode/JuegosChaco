@@ -10,14 +10,15 @@
 	<h1>G2 - CARPINCHO</h1>
 	<a href="{% url 'home' %}"><img src="{% static 'img/home.jpg' %}" width="100px" height="100px"></a>
 	
-
-
 	{% if user.is_authenticated %}
-		<span>{{user.username}}</span>
+		<a href="{% url 'usuario:perfil' %}">{{user.username}}</a>
 		<a href="{% url 'logout' %}">LOGOUT</a>
 	{% else %}
 		<a href="{% url 'login' %}">LOGIN</a>
 	{% endif %}
+	<br>
+	<a href="{% url 'preguntas:jugar' %}">Jugar</a>
+	
 
 {% block contenido %}
 
