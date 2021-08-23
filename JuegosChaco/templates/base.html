@@ -15,9 +15,12 @@
 		<a href="{% url 'logout' %}">LOGOUT</a>
 	{% else %}
 		<a href="{% url 'login' %}">LOGIN</a>
+		<a href="{% url 'usuario:registrar' %}">REGISTRAR</a>
 	{% endif %}
 	<br>
+	<H3>
 	<a href="{% url 'preguntas:jugar' %}">Jugar</a>
+	</H3>
 	
 
 {% block contenido %}
