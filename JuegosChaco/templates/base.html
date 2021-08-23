@@ -8,7 +8,8 @@
 </head>
 <body>
 	<h1>G2 - CARPINCHO</h1>
-	<a href="{% url 'home' %}"><img src="{% static 'img/home.jpg' %}" width="100px" height="100px"></a>
+	<header>
+		<a href="{% url 'home' %}"><img src="{% static 'img/Capybara-with-Given-180x180.png' %}" width="100px" height="100px"></a>
 	
 	{% if user.is_authenticated %}
 		<a href="{% url 'usuario:perfil' %}">{{user.username}}</a>
@@ -16,8 +17,12 @@
 	{% else %}
 		<a href="{% url 'login' %}">LOGIN</a>
 	{% endif %}
-	<br>
-	<a href="{% url 'preguntas:jugar' %}">Jugar</a>
+	</header>
+	
+	
+	<h3>Home<a href="{% url 'preguntas:jugar' %}">Jugar</a> Nosotros</h3>
+	
+
 	
 
 {% block contenido %}

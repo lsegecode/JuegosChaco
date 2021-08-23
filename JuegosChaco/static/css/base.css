@@ -3,6 +3,7 @@
 body {
 	background-color: rgb(27, 185, 177); 
 	opacity: 1;
+	text-align: center;
 	
 }
 
@@ -10,23 +11,24 @@ h1 {
 	color: #FCFC14;
 	font-family: Lobster;
 	font-size: 50px;
+	text-align: center;
 }
 
-h2 {
-	color: #000000; 
-	font-family: Helvetica; 
-	font-size: 20px;
-	border: 5px solid red;
-  	border-radius: 10px;
-  	background-color: #FFFFFF;
-	
+h2{
+	color:#000000;
+	font-family: Helvetica;
+	font-size: 35px;
+	margin-right: 30px;
+	text-align: center;
+}
+h3{
+	color:#000000;
+	font-family: Helvetica;
+	font-size: 30px;
+	margin-right: 30px;
+	text-align: center;
 }
 
-li {
-	display: inline;
-	padding: 15px;
-
-}
 li a:hover {
   background-color: lightblue;
 }
