@@ -16,7 +16,7 @@ class ElegirRespuesta(models.Model):
 
     MAXIMO_RESPUESTA = 3
     pregunta = models.ForeignKey(Preguntas, related_name = 'preguntas', on_delete = models.CASCADE)
-    correcta = models.BooleanField(verbose_name = '¿Es esta la pregunta correcta?', default = False, null = False)
+    correcta = models.BooleanField(verbose_name = '¿Es esta la respuesta correcta?', default = False, null = False)
     texto = models.TextField(verbose_name = 'Texto de la respuesta')
 
     def __str__(self):
