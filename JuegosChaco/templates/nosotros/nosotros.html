@@ -2,20 +2,20 @@
 {% load static %}
 
 
+
 {% block contenido %}
 
-	<h1>¡Bienvenido/a!</h1>
+<h1>El equipo</h1>
 
-	
+<br>
+	<h3>persona 1</h3>
 	<br>
-	<h3>Haz click en Jugar para iniciar el juego</h3>
+	<h3>persona 2</h3>
 	<br>
-	<h3>Haz click en Nosotros para saber un poco sobre los creadores del juego</h3>
+	<h3>persona 3</h3>
 
 	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 
 	<a href="{% url 'home' %}"><img src="{% static 'img/1main.png' %}"></a>
-	<br>	
-	<h3>Este proyecto fue realizado en el marco del INFORMATORIO</h3>
 
 {% endblock contenido %}

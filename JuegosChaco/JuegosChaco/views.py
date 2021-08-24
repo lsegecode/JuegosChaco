@@ -5,3 +5,6 @@ def Home(request):
 
 def Usuario(request):
     return render(request, 'usuario.html')
+
+def Nosotros(request):
+	return render(request, 'nosotros.html')
