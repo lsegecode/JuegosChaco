@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='elegirrespuesta',
             name='correcta',
-            field=models.BooleanField(default=False, verbose_name='¿Es esta la pregunta correcta?'),
+            field=models.BooleanField(default=False, verbose_name='¿Es esta la respuesta correcta?'),
         ),
     ]
