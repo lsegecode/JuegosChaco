@@ -4,7 +4,8 @@ from django.conf import settings
 from apps.usuario.models import Usuario
 
 class Preguntas(models.Model):
-
+     NUMERO_DE_RESPUESTAS_PERMITIDAS = 1
+     
      consigna = models.TextField(verbose_name = 'Texto de la pregunta')
      categorias = models.ForeignKey(Categoria, related_name = 'la_categoria', on_delete = models.CASCADE)
     
