@@ -25,6 +25,7 @@ urlpatterns = [
     path('login/', auth.LoginView.as_view(template_name = 'usuario/login.html'), name = 'login'),
     path('logout/', auth.LogoutView.as_view(), name = 'logout'),
     path('nosotros/', views.Nosotros, name = 'nosotros'),
+    
     #REDIRECCION A LAS APP
     path('usuario/', include('apps.usuario.urls')),
     path('preguntas/',include('apps.preguntas.urls')),
