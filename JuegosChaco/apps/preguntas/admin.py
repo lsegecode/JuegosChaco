@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from .models import Preguntas, ElegirRespuesta, PreguntasRespondidas
+from .models import Preguntas, ElegirRespuesta
 from .forms import ElegirInlineFormset
+from apps.resultados.models import PreguntasRespondidas
 
 class ElegirRespuestaInline(admin.TabularInline):
 	model = ElegirRespuesta

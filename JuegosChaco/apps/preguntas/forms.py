@@ -1,5 +1,7 @@
 from django import forms
-from .models import Preguntas,ElegirRespuesta, PreguntasRespondidas
+from .models import Preguntas,ElegirRespuesta
+from apps.resultados.models import PreguntasRespondidas
+
 
 
 
