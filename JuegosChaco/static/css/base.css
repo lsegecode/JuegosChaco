@@ -29,6 +29,25 @@ h3{
 	text-align: center;
 	margin-right: 30px;
 }
+h4{
+	color:#000000;
+	font-family: Helvetica;
+	font-size: 20px;
+	margin-right: 30px;
+	text-align: center;
+	margin-right: 30px;
+}
+
+h5{
+	color:#000000;
+	font-family: Helvetica;
+	font-size: 25px;
+	margin-right: 30px;
+	text-align: center;
+	margin-right: 30px;
+}
+
+}
 
 .parrafo{
 	margin-right: 100px;
