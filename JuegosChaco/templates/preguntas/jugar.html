@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<<<<<<< HEAD
 {% block contenido %}
 
     <h3><p>
@@ -12,3 +13,12 @@
 
 {% endblock contenido %}
 
+=======
+
+{% block contenido %}
+    {% for categoria in categorias %}
+        <h4>{{ categoria }} <a href="{% url 'preguntas:jugar_categoria' categoria=categoria %}">Jugar</a></h4>
+        
+    {%  endfor %} 
+{% endblock contenido %}
+>>>>>>> 5ce0701cc162c33b3a76a4a2bacf7e99584ba822
