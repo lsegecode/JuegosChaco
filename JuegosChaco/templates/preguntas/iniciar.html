@@ -20,7 +20,13 @@
 		5.	ECONOMÍA<br>
 		6.	CIENCIA Y EDUCACIÓN <br>
 		7.	ENTRETENIMIENTO</p>
-	<h3><a href="{% url 'preguntas:iniciar' %}">Jugar</a></h3>
-	</h4>
+
+	{% if user.is_authenticated %}
+		<h3><a href="{% url 'preguntas:iniciar' %}">Jugar</a></h3>
+	{% else %}
+		<a href = "{% url 'login' %}">LOGIN</a>
+		<a href = "{% url 'usuario:registrar' %}">REGISTRAR</a>
+	{% endif %}
+	
 
 {% endblock contenido %}
