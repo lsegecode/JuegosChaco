@@ -4,10 +4,13 @@
 
 {% block contenido %}
 
-	<h1>Hola soy el PERFIL</h1>
+	<h1>Tu perfil</h1>
+
+	<a href="{% url 'home'%}"><h3>Salir</h3></a> <br>
+	<a href="{% url 'preguntas:jugar'%}"><h3>Volver a jugar</h3></a><br>
 
 	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-	<p>preguntas_respondidas {{preguntas_respondidas}}</p>
+	<h4>Tus preguntas respondidas fueron: {{preguntas_respondidas}}</h4>
 
 
 {% endblock contenido %}
