@@ -1,10 +1,7 @@
-
-
 body {
 	background-color: rgb(27, 185, 177); 
 	opacity: 1;
 	text-align: center;
-	
 }
 
 h1 {
@@ -21,6 +18,7 @@ h2{
 	margin-right: 30px;
 	text-align: center;
 }
+
 h3{
 	color:#000000;
 	font-family: Helvetica;
@@ -66,7 +64,6 @@ h3{
 	background-color: #fdcae1;
 	float: left;
 	margin:10px;
-
 }
 
 .Lucas{
@@ -74,8 +71,6 @@ h3{
 	background-color: #84b6f4;
 	float: left;
 	margin:10px;
-	
-
 }
 
 .Descripcion{

@@ -1,12 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+
 
 {% for pregunta in preguntas %}
-<p>Consigna:</p>
-<h1>{{ pregunta.consigna }}</h1>
-<p>opciones</p>
-{% for opcion in pregunta.opciones %}
-    <p>{{opcion.pregunta}}</p>
-    <!-- <p>{{opcion.correcta}}</p> -->
-    <a href="{% url 'preguntas:seleccionar_respuesta' id=opcion.id %}?back={{ request.path }}">elegir</a>
-{% endfor %}
+    <p>Consigna:</p>
+    <h1>{{ pregunta.consigna }}</h1>
+    <p>opciones</p>
+    {% for opcion in pregunta.opciones %}
+        <p>{{opcion.pregunta}}</p>
+        <!-- <p>{{opcion.correcta}}</p> -->
+        <a href="{% url 'preguntas:seleccionar_respuesta' id=opcion.id %}?back={{ request.path }}">elegir</a>
+    {% endfor %}
 -----------------------------
 {% endfor %}
+
+{% endblock contenido %}

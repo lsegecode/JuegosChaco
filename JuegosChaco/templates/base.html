@@ -4,32 +4,27 @@
 <html>
 <head>
 	<title>Juegos Chaco</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}", 
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"
 </head>
 <body>
 	<h1>G2 - CARPINCHO</h1>
 	<header>
 		<aside>
-		<a href="{% url 'home' %}"><img src="{% static 'img/Capybara-with-Given-180x180.png' %}" width="100px" height="100px"></a>
+		<a href = "{% url 'home' %}"><img src = "{% static 'img/Capybara-with-Given-180x180.png' %}" width = "100px" height = "100px"></a>
 		</aside>
 	{% if user.is_authenticated %}
-		<a href="{% url 'usuario:perfil' %}">{{user.username}}</a>
-		<a href="{% url 'logout' %}">LOGOUT</a>
+		<a href = "{% url 'usuario:perfil' %}">{{user.username}}</a>
+		<a href = "{% url 'logout' %}">LOGOUT</a>
 	{% else %}
-		<a href="{% url 'login' %}">LOGIN</a>
-		<a href="{% url 'usuario:registrar' %}">REGISTRAR</a>
+		<a href = "{% url 'login' %}">LOGIN</a>
+		<a href = "{% url 'usuario:registrar' %}">REGISTRAR</a>
 	{% endif %}
 	</header>
 	
+	<h3><nav><a style = "margin-right: 20px"; href = "{% url 'home' %}">Home</a><a style = "margin-right: 20px" href = "{% url 'preguntas:jugar' %}">Jugar</a> <a style = "margin-right: 20px"; href = "{% url 'nosotros' %}">Nosotros</a></nav></h3>
 	
-	<h3><nav><a style="margin-right: 20px"; href="{% url 'home' %}">Home</a><a style="margin-right: 20px" href="{% url 'preguntas:jugar' %}">Jugar</a> <a style="margin-right: 20px"; href="{% url 'nosotros' %}">Nosotros</a></nav></h3>
-	
-
-	
-
 {% block contenido %}
 
 {% endblock contenido %}
-
 </body>
 </html>

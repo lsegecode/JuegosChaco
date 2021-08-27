@@ -1,8 +1,6 @@
 from django import forms
-from .models import Preguntas,ElegirRespuesta
+from .models import Preguntas, ElegirRespuesta
 from apps.resultados.models import PreguntasRespondidas
-
-
 
 
 class ElegirInlineFormset (forms.BaseInlineFormSet):
@@ -23,6 +21,3 @@ class ElegirInlineFormset (forms.BaseInlineFormSet):
 		except AssertionError:
 			raise forms.ValidationError('Exactamente una sola respuesta es permitida')
 			
-				
-
-				
