@@ -9,6 +9,7 @@ class Preguntas(models.Model):
      
     consigna = models.TextField(verbose_name = 'Texto de la pregunta')
     categorias = models.ForeignKey(Categoria, related_name = 'la_categoria', on_delete = models.CASCADE)
+    max_puntaje = models.DecimalField(verbose_name='Maximo Puntaje', default=3, decimal_places=2, max_digits=6)
     
     def __str__(self):
      	return self.consigna
