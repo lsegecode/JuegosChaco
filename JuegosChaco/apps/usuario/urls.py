@@ -6,5 +6,6 @@ app_name = 'usuario'
 
 urlpatterns = [
     path('', views.Perfil, name = 'perfil'),
+    path('ranking/', views.Ranking, name = 'ranking'),
     path('registrar/', RegistroUsuario.as_view(), name = 'registrar'),
 ]

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<div>
+    <ol>
+        {% for rank in ranking %}
+        <li>
+            {{rank.username}} correctas {{rank.correctas}}
+        </li>
+        {% endfor %}
+    </ol>
+    
+</div>
+{% endblock contenido %}

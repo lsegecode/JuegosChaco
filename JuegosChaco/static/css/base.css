@@ -91,3 +91,8 @@ h5{
 .Descripcion{
 	font-size: 1.3em;
 }
+
+a:link {color:#000000;}    /* unvisited link is black*/
+a:visited {color:#000000;} /* visited link is black (reverse the color back to black)*/
+a:hover {color:#0000FF;background-color: #84b6f4;}   /* mouse over link (blue when mouse over)*/
+a:active {color:#000000;}  /* selected link (blue in the split second which you loading the page.)*/
