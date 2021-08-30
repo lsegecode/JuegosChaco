@@ -22,9 +22,9 @@ def Perfil(request):
 def Ranking(request):
     ranking = []
     for usuario in Usuario.objects.all():
-        correctas = len([p for p in list(PreguntaPartida.objects.filter(partida__usuario=request.user)) if p.correcta])
+        correctas = len([p for p in list(PreguntaPartida.objects.filter(partida__usuario=usuario)) if p.correcta])
         ranking.append({'username':usuario.username, 'correctas': correctas})
-    ranking = sorted(ranking, key=lambda x: x['correctas'], reverse=True)
+    ranking = sorted(ranking, key=lambda x: x['correctas'], reverse=True)[:10]
     return render(request, 'usuario/ranking.html', context={
         'ranking': ranking
     })
