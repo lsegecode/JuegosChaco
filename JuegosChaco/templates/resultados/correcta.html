@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block contenido %}
+
+<p>Esta respuesta es correcta</p>
+
+
+
+<a href="javascript:history.back()"> Volver Atrás / Seguir jugando </a>
+
+<br>
+
+<a href="{% url 'preguntas:iniciar' %}">Cambiar de categoría</a></p>
+
+<br>
+
+
+
+{% endblock contenido %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block contenido %}
+
+<p>No me la conte todo mal haces</p>
+
+
+
+<a href="javascript:history.back()"> Volver Atrás / Seguir jugando </a>
+
+<br>
+
+<a href="{% url 'preguntas:iniciar' %}">Cambiar de categoría</a></p>
+
+
+{% endblock contenido %}

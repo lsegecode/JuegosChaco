@@ -47,13 +47,19 @@ def SeleccionarRespuesta(request, id):
         return HttpResponse(f'Esta pregunta ya se contestó pruebe con otra<br><a href="{back}">Volver</a>')
     else:
         # 2) verificar si la respuesta es correcta y agregar a metadata(lista) el diccionao
-        correcta = 'Correcto!!' if elegir_respuesta.correcta else 'Incorrecto!!'
+        #correcta = 'Correcto!!' 
+        if elegir_respuesta.correcta:
         
-        PreguntaPartida.objects.create(
-            partida=partida,
-            pregunta=pregunta,
-            correcta=elegir_respuesta.correcta
-        )
-        return HttpResponse(f'{correcta}<br><a href="{back}">Volver</a>')
+            PreguntaPartida.objects.create(
+                partida=partida,
+                pregunta=pregunta,
+                correcta=elegir_respuesta.correcta
+            )
+        
+            return render(request, 'resultados/correcta.html')
+
+        else:
+            return render(request, 'resultados/incorrecta.html')
+
     
     
