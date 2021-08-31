@@ -21,7 +21,14 @@
 	{% endif %}
 	</header>
 	
-	<h3><nav><a style = "margin-right: 20px"; href = "{% url 'home' %}">Home</a><a style = "margin-right: 20px" href = "{% url 'preguntas:jugar' %}">Jugar</a> <a style = "margin-right: 20px"; href = "{% url 'nosotros' %}">Nosotros</a></nav></h3>
+	<h3>
+		<nav>
+			<a style = "margin-right: 20px"; href = "{% url 'home' %}">Home</a>
+			<a style = "margin-right: 20px" href = "{% url 'preguntas:jugar' %}">Jugar</a> 
+			<a style = "margin-right: 20px" href = "{% url 'usuario:ranking' %}">Ranking</a> 
+			<a style = "margin-right: 20px"; href = "{% url 'nosotros' %}">Nosotros</a>
+		</nav>
+	</h3>
 	
 {% block contenido %}
 

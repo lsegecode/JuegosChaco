@@ -1,7 +1,7 @@
 from apps.preguntas.models import Preguntas, ElegirRespuesta, Partida, PreguntaPartida
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, HttpResponseRedirect
 from apps.categorias.models import Categoria
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 # Create your views here.
 
@@ -13,13 +13,22 @@ def Jugar(request):
         'categorias': list(Categoria.objects.all().values_list('nombre', flat = True))
     })
 
-def JugarCategoria(request, categoria):
-    # return render(request, 'preguntas/jugar_categoria.html', context={
-    #     'preguntas': Preguntas.objects.filter(categorias__nombre=categoria)
-    # })
-    preguntas = []
-    for pregunta in Preguntas.objects.filter(categorias__nombre = categoria):
-        preguntas.append({
+
+
+def JugarCategoria(request, nombre_categoria):
+    from random import randint
+    preguntas_vista = []
+
+    partida, _ = Partida.objects.get_or_create(
+        usuario = request.user, 
+        categoria=Categoria.objects.get(nombre=nombre_categoria) 
+    )
+    preguntas_categoria = list(Preguntas.objects.filter(categorias__nombre = nombre_categoria).exclude(
+        id__in=[x.pregunta.id for x in PreguntaPartida.objects.filter(partida=partida)] #preguntas_contestadas
+    ))
+    if preguntas_categoria:
+        pregunta = preguntas_categoria[randint(0,len(preguntas_categoria) -1 )]
+        preguntas_vista.append({
             "consigna": pregunta.consigna,
             "opciones": [{
                 "id": opcion.id,
@@ -28,11 +37,15 @@ def JugarCategoria(request, categoria):
             } for opcion in ElegirRespuesta.objects.filter(pregunta = pregunta)]
         })
     return render(request, 'preguntas/jugar_categoria.html', context = {
-        'preguntas': preguntas
+        'preguntas': preguntas_vista,
+        'todas_respondidas': len(preguntas_categoria) == 0,
+        'preguntas_categoria':len(preguntas_categoria)
     })
 
 def SeleccionarRespuesta(request, id):
-    back = request.GET.get('back', '')
+    context = {
+        'back':request.GET.get('back', '')
+    }
     elegir_respuesta = ElegirRespuesta.objects.get(pk=id)
     pregunta = elegir_respuesta.pregunta
     # 1) ver si existe partida para esa categoria y usuario, sino crearla
@@ -40,26 +53,17 @@ def SeleccionarRespuesta(request, id):
         usuario = request.user, 
         categoria = pregunta.categorias
     )
-    # 0) si la respuesta ya estaba contestada (verificar en metadata) redireccionar a las preguntas
+    PreguntaPartida.objects.create(
+        partida=partida,
+        pregunta=pregunta,
+        correcta=elegir_respuesta.correcta
+    )
+    view = 'resultados/correcta.html' if elegir_respuesta.correcta else 'resultados/incorrecta.html'
     
-    pregunta_match = list(PreguntaPartida.objects.filter(partida=partida,pregunta=pregunta))
-    if pregunta_match:
-        return HttpResponse(f'Esta pregunta ya se contestó pruebe con otra<br><a href="{back}">Volver</a>')
-    else:
-        # 2) verificar si la respuesta es correcta y agregar a metadata(lista) el diccionao
-        #correcta = 'Correcto!!' 
-        if elegir_respuesta.correcta:
-        
-            PreguntaPartida.objects.create(
-                partida=partida,
-                pregunta=pregunta,
-                correcta=elegir_respuesta.correcta
-            )
-        
-            return render(request, 'resultados/correcta.html')
+    
+    return render(request, view, context=context)
 
-        else:
-            return render(request, 'resultados/incorrecta.html')
+ 
 
     
     

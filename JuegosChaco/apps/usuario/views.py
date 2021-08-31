@@ -1,5 +1,5 @@
-from apps.preguntas.models import PreguntaPartida
-from django.shortcuts import render
+from apps.preguntas.models import Partida, PreguntaPartida
+from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
@@ -28,6 +28,13 @@ def Ranking(request):
     return render(request, 'usuario/ranking.html', context={
         'ranking': ranking
     })
+
+def Reiniciar(request):
+    partidas_usuario = Partida.objects.filter(
+        usuario = request.user, 
+    )
+    partidas_usuario.delete()
+    return redirect('home')
 
 class RegistroUsuario(CreateView):
     model = Usuario
