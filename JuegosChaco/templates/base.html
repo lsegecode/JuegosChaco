@@ -7,7 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 </head>
 <body>
-	<h1>G2 - CARPINCHO</h1>
+
+	<h1>G2 - CARPINTECH</h1>
+	
 	<header>
 		<aside>
 		<a href = "{% url 'home' %}"><img src = "{% static 'img/Capybara-with-Given-180x180.png' %}" width="100px" height="100px"></a>
@@ -21,14 +23,16 @@
 	{% endif %}
 	</header>
 	
-	<h3>
+	<br>
+
+	<div class='navigation'>
 		<nav>
 			<a style = "margin-right: 20px"; href = "{% url 'home' %}">Home</a>
 			<a style = "margin-right: 20px" href = "{% url 'preguntas:jugar' %}">Jugar</a> 
 			<a style = "margin-right: 20px" href = "{% url 'usuario:ranking' %}">Ranking</a> 
 			<a style = "margin-right: 20px"; href = "{% url 'nosotros' %}">Nosotros</a>
 		</nav>
-	</h3>
+	</div>
 	
 {% block contenido %}
 

@@ -1,11 +1,11 @@
 body {
-	background-color: rgb(27, 185, 177); 
+	background-color: #58b15d; 
 	opacity: 1;
 	text-align: center;
 }
 
 h1 {
-	color: #FCFC14;
+	color: #1f2932;
 	font-family: Lobster;
 	font-size: 50px;
 	text-align: center;
@@ -121,4 +121,10 @@ a:active {color:#000000;}  /* selected link (blue in the split second which you 
 
 .rankings{
 	font-size: 1.3em;
+}
+
+.navigation{
+	font-size: 1.8em;
+	font-weight: bold;
+
 }
