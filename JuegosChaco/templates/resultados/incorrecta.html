@@ -5,7 +5,7 @@
 
 {% block contenido %}
 
-<p>No me la conte todo mal haces</p>
+<span class="respuesta"><p>Respuesta incorrecta, probá de nuevo.</p>
 
 
 
@@ -15,5 +15,7 @@
 
 <a href="{% url 'preguntas:iniciar' %}">Cambiar de categoría</a></p>
 	<br>
+
+</span>
 <img src = "{% static 'img/chiguiro-santuario-de-fauna-hacienda-napoles.png' %}">
 {% endblock contenido %}
