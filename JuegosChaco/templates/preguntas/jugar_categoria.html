@@ -5,17 +5,20 @@
 {% block contenido %}
 
     {% if todas_respondidas %}
-        <p>categoria finalizada juegue otra categoria (hacer boton para volver a vista jugar)</p>
+        <p>categoria finalizada juegue otra categoria </p>
+        <a href="{% url 'preguntas:iniciar' %}">Seleccionar otra categoria</a>
     {% else %}
         {% for pregunta in preguntas %}
             <h4>Consigna:</h4>
             <h3 style="font-size:25px";>{{ pregunta.consigna }}</h3>
             <h4>Opciones</h4>
             {% for opcion in pregunta.opciones %}
-                <h5>{{opcion.pregunta}}</h5>
-            <a href="{% url 'preguntas:seleccionar_respuesta' id=opcion.id %}?back={{ request.path }}">elegir</a>
+                <h5>{{opcion.pregunta}} <a style="display: inline-block;" href="{% url 'preguntas:seleccionar_respuesta' id=opcion.id %}?back={{ request.path }}">elegir</a></h5>
+                
             {% endfor %}
+
             <br>
         {% endfor %}
+            
     {% endif %}
 {% endblock contenido %}

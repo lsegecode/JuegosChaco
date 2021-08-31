@@ -46,6 +46,17 @@ h5{
 	margin-right: 30px;
 }
 
+h6{
+	color:#000000;
+	font-family: Helvetica;
+	font-size: 25px;
+	margin-right: 30px;
+	text-align: left;
+	margin-right: 30px;
+}
+
+
+
 .parrafo{
 	margin-right: 100px;
 	margin-left: 100px;
@@ -84,6 +95,13 @@ h5{
 .Lucas{
 	width: 30%;
 	background-color: #84b6f4;
+	float: left;
+	margin:10px;
+}
+
+.Emanuel{
+	width: 30%;
+	background-color: #FFA856;
 	float: left;
 	margin:10px;
 }
