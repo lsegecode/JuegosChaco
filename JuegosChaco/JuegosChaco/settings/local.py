@@ -4,12 +4,13 @@ DEBUG = True
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'juegoschaco',
-        'USER': 'root',
-        'PASSWORD': 'Emanuel153456',
-        'HOST': 'localhost',
-        'PORT': 3306,
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'JuegosChaco',
+        'Trusted_Connection': 'yes',
+        'HOST': 'localhost\\SQLEXPRESS',
+        'OPTIONS': {
+        	'driver' : 'SQL Server Native Client 11.0',
+        }
     }
 }
 
