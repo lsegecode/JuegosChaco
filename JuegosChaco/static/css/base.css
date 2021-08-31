@@ -87,14 +87,14 @@ h6{
 
 .Zoe{
 	width: 30%;
-	background-color: #fdcae1;
+	background-color: #EC407A;
 	float: left;
 	margin:10px;
 }
 
 .Lucas{
 	width: 30%;
-	background-color: #84b6f4;
+	background-color: #AF7AC5;
 	float: left;
 	margin:10px;
 }
@@ -102,6 +102,13 @@ h6{
 .Emanuel{
 	width: 30%;
 	background-color: #FFA856;
+	float: left;
+	margin:10px;
+}
+
+.bender{
+	width: 30%;
+	background-color: #84b6f4;
 	float: left;
 	margin:10px;
 }
